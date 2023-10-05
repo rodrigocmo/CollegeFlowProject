@@ -1,7 +1,7 @@
 package com.flow.collegeflowproject.repository.course;
 
 
-import com.collegeclassroom.db.Course;
+import com.flow.collegeflowproject.db.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

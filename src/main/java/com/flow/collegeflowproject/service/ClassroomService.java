@@ -1,9 +1,9 @@
 package com.flow.collegeflowproject.service;
 
-import com.collegeclassroom.db.Classroom;
-import com.collegeclassroom.db.StatusRecord;
-import com.collegeclassroom.exception.GenericExeption;
-import com.collegeclassroom.repository.classroom.ClassroomRepository;
+import com.flow.collegeflowproject.db.Classroom;
+import com.flow.collegeflowproject.db.StatusRecord;
+import com.flow.collegeflowproject.exception.GenericExeption;
+import com.flow.collegeflowproject.repository.classroom.ClassroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

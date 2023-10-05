@@ -1,8 +1,8 @@
 package com.flow.collegeflowproject.repository.classroom;
 
-import com.collegeclassroom.db.Classroom;
-import com.collegeclassroom.db.StatusRecord;
-import com.collegeclassroom.exception.GenericExeption;
+import com.flow.collegeflowproject.db.Classroom;
+import com.flow.collegeflowproject.db.StatusRecord;
+import com.flow.collegeflowproject.exception.GenericExeption;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;

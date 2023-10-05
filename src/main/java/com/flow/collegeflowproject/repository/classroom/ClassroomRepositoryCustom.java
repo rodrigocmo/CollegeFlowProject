@@ -1,6 +1,6 @@
 package com.flow.collegeflowproject.repository.classroom;
 
-import com.collegeclassroom.db.Classroom;
+import com.flow.collegeflowproject.db.Classroom;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 

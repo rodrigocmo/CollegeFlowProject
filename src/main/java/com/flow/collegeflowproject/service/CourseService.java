@@ -1,9 +1,8 @@
 package com.flow.collegeflowproject.service;
 
-
-import com.collegeclassroom.db.Course;
-import com.collegeclassroom.exception.GenericExeption;
-import com.collegeclassroom.repository.course.CourseRepository;
+import com.flow.collegeflowproject.db.Course;
+import com.flow.collegeflowproject.exception.GenericExeption;
+import com.flow.collegeflowproject.repository.course.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

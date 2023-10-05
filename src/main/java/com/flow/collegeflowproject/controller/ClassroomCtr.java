@@ -1,7 +1,7 @@
 package com.flow.collegeflowproject.controller;
 
-import com.collegeclassroom.db.Classroom;
-import com.collegeclassroom.service.ClassroomService;
+import com.flow.collegeflowproject.db.Classroom;
+import com.flow.collegeflowproject.service.ClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;

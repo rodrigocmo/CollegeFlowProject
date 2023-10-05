@@ -1,8 +1,9 @@
 package com.flow.collegeflowproject.service;
 
-import com.collegeclassroom.db.Shift;
-import com.collegeclassroom.exception.GenericExeption;
-import com.collegeclassroom.repository.shift.ShiftRepository;
+
+import com.flow.collegeflowproject.db.Shift;
+import com.flow.collegeflowproject.exception.GenericExeption;
+import com.flow.collegeflowproject.repository.shift.ShiftRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
