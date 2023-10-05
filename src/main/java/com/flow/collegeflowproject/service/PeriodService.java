@@ -1,5 +1,6 @@
 package com.flow.collegeflowproject.service;
 
+import com.flow.collegeflowproject.db.Period;
 import com.flow.collegeflowproject.exception.GenericExeption;
 import com.flow.collegeflowproject.repository.period.PeriodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
