@@ -35,9 +35,9 @@ public class ClassroomCtr {
         return new ResponseEntity<>(service.create(classroom),HttpStatus.CREATED);
     }
 
-    @GetMapping(path = "/vacancies/{idClass}")
-    public ResponseEntity<Long> findVacancies(@PathVariable Long idClass) {
-        return new ResponseEntity<>(service.findVacancies(idClass),HttpStatus.OK);
+    @GetMapping(path = "/vacancies/{idClassroom}")
+    public ResponseEntity<Long> findVacancies(@PathVariable Long idClassroom) {
+        return new ResponseEntity<>(service.findVacancies(idClassroom),HttpStatus.OK);
     }
 
 }
