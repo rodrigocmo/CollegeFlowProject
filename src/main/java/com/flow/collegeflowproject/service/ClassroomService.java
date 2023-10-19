@@ -3,12 +3,15 @@ package com.flow.collegeflowproject.service;
 import com.flow.collegeflowproject.db.Classroom;
 import com.flow.collegeflowproject.db.StatusRecord;
 import com.flow.collegeflowproject.exception.GenericExeption;
+import com.flow.collegeflowproject.external.RestTemplateConfigs;
+import com.flow.collegeflowproject.external.RestTemplateRequests;
 import com.flow.collegeflowproject.repository.classroom.ClassroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -20,6 +23,9 @@ public class ClassroomService {
     @Qualifier("collegeclassroomrepository")
     ClassroomRepository repository;
 
+    @Autowired
+    RestTemplateRequests restTemplateRequests;
+
 
 
     public List<Classroom> findAllClass(){
@@ -30,9 +36,10 @@ public class ClassroomService {
         return repository.findById(id).orElseThrow(()-> new GenericExeption("Classroom not found"));
     }
 
-    public Classroom create(Classroom classroom){
+    public String create(Classroom classroom){
         classroom.setStatus(StatusRecord.ACTIVE);
-     return repository.save(classroom);
+      repository.save(classroom);
+        return restTemplateRequests.sendClassroomToStudentService(classroom);
     }
 
     public Long findVacancies(Long idClass){

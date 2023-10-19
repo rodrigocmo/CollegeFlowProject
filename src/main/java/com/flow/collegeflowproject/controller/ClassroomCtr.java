@@ -31,7 +31,7 @@ public class ClassroomCtr {
     }
 
     @PostMapping()
-    public ResponseEntity<Classroom> create(@RequestBody Classroom classroom){
+    public ResponseEntity<String> create(@RequestBody Classroom classroom){
         return new ResponseEntity<>(service.create(classroom),HttpStatus.CREATED);
     }
 
