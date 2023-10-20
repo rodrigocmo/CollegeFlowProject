@@ -1,6 +1,7 @@
 package com.flow.collegeflowproject.controller;
 
 import com.flow.collegeflowproject.db.Classroom;
+import com.flow.collegeflowproject.db.dtoandrecords.ClassroomRecord;
 import com.flow.collegeflowproject.service.ClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -31,7 +32,7 @@ public class ClassroomCtr {
     }
 
     @PostMapping()
-    public ResponseEntity<String> create(@RequestBody Classroom classroom){
+    public ResponseEntity<ClassroomRecord> create(@RequestBody Classroom classroom){
         return new ResponseEntity<>(service.create(classroom),HttpStatus.CREATED);
     }
 

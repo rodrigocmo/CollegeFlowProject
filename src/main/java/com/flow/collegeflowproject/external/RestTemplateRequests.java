@@ -1,6 +1,7 @@
 package com.flow.collegeflowproject.external;
 
 import com.flow.collegeflowproject.db.Classroom;
+import com.flow.collegeflowproject.db.dtoandrecords.ClassroomRecord;
 import com.flow.collegeflowproject.exception.GenericExeption;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,14 +20,15 @@ public class RestTemplateRequests {
     @Value("${endpoint.vacancies}")
     private String endpoint;
 
-    public String sendClassroomToStudentService(Classroom classroom){
+    public ClassroomRecord sendClassroomToStudentService(Classroom classroom){
         restTemplate = new RestTemplate(getClientHttpRequestFactory());
 
         ResponseEntity<Classroom> response = restTemplate.postForEntity(endpoint,"/classroom" + classroom, Classroom.class);
+
         if(!response.getStatusCode().equals(HttpStatus.OK)){
-            return "Classroom created but Student Service unavailable";
+            return new ClassroomRecord(response.getBody(),"Classroom created but Student Service unavailable");
         }else{
-            return "Classroom created and available in StudentService";
+            return new ClassroomRecord(response.getBody(),"Classroom created and available in StudentService");
         }
 
 

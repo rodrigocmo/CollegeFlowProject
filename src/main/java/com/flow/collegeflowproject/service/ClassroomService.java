@@ -2,6 +2,7 @@ package com.flow.collegeflowproject.service;
 
 import com.flow.collegeflowproject.db.Classroom;
 import com.flow.collegeflowproject.db.StatusRecord;
+import com.flow.collegeflowproject.db.dtoandrecords.ClassroomRecord;
 import com.flow.collegeflowproject.exception.GenericExeption;
 import com.flow.collegeflowproject.external.RestTemplateConfigs;
 import com.flow.collegeflowproject.external.RestTemplateRequests;
@@ -36,7 +37,7 @@ public class ClassroomService {
         return repository.findById(id).orElseThrow(()-> new GenericExeption("Classroom not found"));
     }
 
-    public String create(Classroom classroom){
+    public ClassroomRecord create(Classroom classroom){
         classroom.setStatus(StatusRecord.ACTIVE);
       repository.save(classroom);
         return restTemplateRequests.sendClassroomToStudentService(classroom);
