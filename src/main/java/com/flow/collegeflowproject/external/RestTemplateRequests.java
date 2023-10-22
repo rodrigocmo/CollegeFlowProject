@@ -23,7 +23,7 @@ public class RestTemplateRequests {
     public ClassroomRecord sendClassroomToStudentService(Classroom classroom){
         restTemplate = new RestTemplate(getClientHttpRequestFactory());
 
-        ResponseEntity<Classroom> response = restTemplate.postForEntity(endpoint,"/classroom" + classroom, Classroom.class);
+        ResponseEntity<Classroom> response = restTemplate.postForEntity(endpoint + "/classroom", classroom, Classroom.class);
 
         if(!response.getStatusCode().equals(HttpStatus.OK)){
             return new ClassroomRecord(response.getBody(),"Classroom created but Student Service unavailable");
